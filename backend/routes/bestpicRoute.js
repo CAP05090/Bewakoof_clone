@@ -59,9 +59,9 @@ const picRouter = require("express").Router()
  *                              error: "Error message indicating the issue"
  */
 picRouter.get("/", async(req, res)=>{
-    let q = req.query
+    // let q = req.query
     try {
-        let data = await BestPicModel.find({q})
+        let data = await BestPicModel.find()
         res.status(200).send({"Best Pics": data})
     } catch (error) {
         res.status(500).send({"err": error.message})

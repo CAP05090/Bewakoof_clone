@@ -81,7 +81,6 @@ topRouter.get("/", async(req, res)=>{
  *          summary: Added a new top pic data to DB.
  *          tags: [Top Pic]
  *          async: true
- *              - BearerAuth: []
  *          requestBody:
  *              required: true
  *              content:

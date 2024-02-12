@@ -71,9 +71,9 @@ const userRouter = express.Router()
 userRouter.post("/register", async(req, res)=>{
     const {username, email, password} = req.body
     try {
-        let mail = await UserModel.findOne({email})
-        if(mail){
-            res.send({"msg":"Email is already registered Use Different Mail ID"})
+        let Email = await UserModel.findOne({email})
+        if(Email){
+            res.send("already registered")
         } else {
             if(isStrongPassword(password)){
                 bcrypt.hash(password, 5, async(err, hash)=>{
@@ -86,7 +86,7 @@ userRouter.post("/register", async(req, res)=>{
                     }
                 })
             } else {
-                res.send({"msg":"Password does not meet the criteria"})
+                res.send("Password does not meet the criteria")
             }
         }
     } catch (error) {
@@ -147,10 +147,10 @@ userRouter.post("/login", async(req, res)=>{
                 }
             });
         } else{
-            res.status(200).send({"msg":"Email not found"})
+            res.status(404).send({"msg":"not found"})
         }
     } catch (error) {
-        res.status(400).send({"Err":error.message})
+        res.status(400).send({"msg":error.message})
     }
 })
 
