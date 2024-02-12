@@ -35,6 +35,7 @@ const topRouter = require("express").Router()
  *      get:
  *          summary: Get all the Top pic Data.
  *          tags: [Top Pic]
+ *          async: true
  *          parameters: 
  *              - in: query
  *                name: category
@@ -79,6 +80,7 @@ topRouter.get("/", async(req, res)=>{
  *      post:
  *          summary: Added a new top pic data to DB.
  *          tags: [Top Pic]
+ *          async: true
  *          requestBody:
  *              required: true
  *              content:
@@ -109,6 +111,7 @@ topRouter.post("/add", async(req, res)=>{
  *      patch: 
  *          summary: Update the details of the specific Top Pic.
  *          tags: [Top Pic]
+ *          async: true
  *          parameters:
  *              - in: path
  *                name: id
@@ -154,6 +157,7 @@ topRouter.patch("/update/:id", async(req, res)=>{
  *      delete: 
  *          summary: delete a specific Top Pic.
  *          tags: [Top Pic]
+ *          async: true
  *          parameters:
  *              - in: path
  *                name: id
