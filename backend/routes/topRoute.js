@@ -33,9 +33,9 @@ const topRouter = require("express").Router()
  * @swagger
  *  /toppic:
  *      get:
- *          async: true
  *          summary: Get all the Top pic Data.
  *          tags: [Top Pic]
+ *          async: true
  *          parameters: 
  *              - in: query
  *                name: category
