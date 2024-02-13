@@ -64,9 +64,8 @@ const bewakoofbestRouter = require("express").Router()
 
 // Get Data
 bewakoofbestRouter.get("/", async(req, res)=>{
-    let q = req.query
     try {
-        let data = await BewakoofBestModel.find({q})
+        let data = await BewakoofBestModel.find()
         res.status(200).send({"Bewakoof Best": data})
     } catch (error) {
         res.status(500).send({"err": error.message})

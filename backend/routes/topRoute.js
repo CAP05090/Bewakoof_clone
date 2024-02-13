@@ -64,9 +64,8 @@ const topRouter = require("express").Router()
  */
 
 topRouter.get("/", async(req, res)=>{
-    let q = req.query
     try {
-        let data = await TopModel.find({q})
+        let data = await TopModel.find()
         res.status(200).send({"Top Data": data})
     } catch (error) {
         res.status(500).send({"err": error.message})

@@ -79,9 +79,8 @@ const overSizedRouter = require("express").Router()
  */
 
 overSizedRouter.get("/", async(req, res)=>{
-    let q = req.query
     try {
-        let data = await OverSizeModel.find({q})
+        let data = await OverSizeModel.find()
         res.status(200).send({"Over Sized T-shirts": data})
     } catch (error) {
         res.status(500).send({"err": error.message})

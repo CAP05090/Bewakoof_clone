@@ -62,9 +62,8 @@ const trendRouter = require("express").Router()
  *                              error: "Error message indicating the issue"
  */
 trendRouter.get("/", async(req, res)=>{
-    let q = req.query
     try {
-        let data = await TrendingModel.find({q})
+        let data = await TrendingModel.find()
         res.status(200).send({"Trending": data})
     } catch (error) {
         res.status(500).send({"err": error.message})
