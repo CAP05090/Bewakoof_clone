@@ -66,7 +66,7 @@ const missedRouter = require("express").Router()
 missedRouter.get("/", async(req, res)=>{
     try {
         let data = await MissedModel.find()
-        res.status(200).send({"Missed Hot": data})
+        res.status(200).send(data)
     } catch (error) {
         res.status(500).send({"err": error.message})
     }

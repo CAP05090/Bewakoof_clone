@@ -84,7 +84,7 @@ customRouter.use(auth)
 customRouter.get("/", async(req, res)=>{
     try {
         let data = await CustomModel.find()
-        res.status(200).send({"Custom T-shirts": data})
+        res.status(200).send(data)
     } catch (error) {
         res.status(500).send({"err": error.message})
     }

@@ -61,7 +61,7 @@ const picRouter = require("express").Router()
 picRouter.get("/", async(req, res)=>{
     try {
         let data = await BestPicModel.find()
-        res.status(200).send({"Best Pics": data})
+        res.status(200).send(data)
     } catch (error) {
         res.status(500).send({"err": error.message})
     }

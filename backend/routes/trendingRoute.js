@@ -64,7 +64,7 @@ const trendRouter = require("express").Router()
 trendRouter.get("/", async(req, res)=>{
     try {
         let data = await TrendingModel.find()
-        res.status(200).send({"Trending": data})
+        res.status(200).send(data)
     } catch (error) {
         res.status(500).send({"err": error.message})
     }
